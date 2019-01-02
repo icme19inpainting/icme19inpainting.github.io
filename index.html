@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learning-Based Image Inpainting</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+    <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
+    <link href="css/owl.theme.css" rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/workshop.css">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" style="color: #000">
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="height: auto">
+    <div class="container">
+		<div style="position: absolute; padding: 10px 0px 0px 20px; margin-top: -17px; font-size: large">
+			<p><a href="http://www.icme2019.org/grand_challenge">ICME 2019 Grand Challenge</a></p>
+		</div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse" >
+            <ul class="nav navbar-nav">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li><a class="page-scroll" href="#introduction" style="font-size: 14pt;">Challenge description</a></li>
+				<li><a class="page-scroll" href="#datasets" style="font-size: 14pt;">Datasets</a></li>
+                <li><a class="page-scroll" href="#evaluation" style="font-size: 14pt;">Evaluation criteria</a></li>
+                <li><a class="page-scroll" href="#dates" style="font-size: 14pt;">Submission deadline</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="modified-header intro" style="background-image: url(img/inpainting_tower3.jpg); padding-top: 10px">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2" style="margin-top:  100px;">
+                    <h1><span  style="color: #FFFFFF;!important;">Learning-Based<br>Image Inpainting</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="introduction">
+    <div class="container"> <!-- Container -->
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>Challenge description</h2>
+                <hr>
+                <p class="welcome-message text-left" style="font-size: 14pt">
+                    <strong>Image inpainting</strong>, also known as <strong>image completion</strong>, is the process of filling-in the missing areas of an incomplete image so that the completed image is visually plausible. While this task is indispensable in many applications, such as dis-occlusion, object removal, error concealment, and so on, the task is still regarded very difficult thus far. Traditionally, several different approaches have been proposed for image inpainting, including partial differential equation-based inpainting, constrained texture synthesis, structure propagation, database-assisted, and so on.
+                </p>
+                <p class="welcome-message text-left" style="font-size: 14pt">
+                    In recent years, deep learning has revolutionized the research of image inpainting, and a number of deep models have been designed. Nonetheless, the lack of a public, widely acknowledged dataset has been a significant issue in developing advanced, learning-based inpainting solution.
+				</p>
+				<p class="welcome-message text-left" style="font-size: 14pt">
+					This challenge is meant to consolidate research efforts about image inpainting using learning, especially deep learning approach. We will prepare two tracks: error concealment (EC) and object removal (OR). In the EC track, we simulate the case of transmission error that incurs missing areas (usually square blocks) in a decoded image. In the OR track, we carefully select some objects in an image to be removed, and produce missing areas with irregular shapes. In both tracks we challenge the researchers to inpaint the incomplete image. The major difference between the two tracks is that, in the first track, we want to recover the missing areas so that the completed image is similar to the original (although this can be very difficult!), and in the second track, we are satisfied as long as the completed image is visually plausible and pleasing.
+				</p>
+				<p class="welcome-message text-left" style="font-size: 14pt">
+					To our best knowledge, if this challenge is accepted to ICME 2019, it will be the first challenge about general-purpose image inpainting in conjunction with related top-tier conferences (including ICME, CVPR, ICCV, ECCV, NIPS, ICML, ICIP, etc.).
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div  id="datasets" style="background-color: #F5F5F5">
+    <div class="container" > <!-- Container -->
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>Datasets</h2>
+                <hr>
+                <div class="welcome-message text-left" style="font-size: 14pt">
+                <p>
+                    We will prepare a large-scale, high-quality, carefully crafted dataset. The dataset consists of three parts: <strong>training</strong>, <strong>validation</strong>, <strong>and test</strong>. <strong>Download</strong> on <a href="https://drive.google.com/open?id=1xX1BoC7Z3qCjP8X6CHc3c636KEoby6Wx">Google Cloud</a> or <a href="https://pan.baidu.com/s/1TD6yMxSXH7PejUxv51hE5Q">Baidu Cloud</a>
+                </p>
+                <p>
+                    <strong>Training set</strong> consists of around 1500 high-definition natural, complete images.
+                </p>
+                <p>
+                    <strong>Validation set</strong> has two subsets that correspond to the two tracks: EC and OR. For validation set we will provide a mask for each image to indicate “missing areas”.
+                </p>
+                <p>
+                    <strong>Test set</strong> is similar in scale to the validation set, and for each test image we will provide incomplete image together with a mask. The ground-truth of test images is not public.
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="evaluation">
+    <div class="container"> <!-- Container -->
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>Evaluation criteria</h2>
+                <hr>
+                <p class="welcome-message text-left" style="font-size: 14pt">
+                    We set different criteria for the two tracks. 
+                </p>
+				<p class="welcome-message text-left" style="font-size: 14pt">
+					For the <strong>EC track</strong>, we will use a combination of PSNR and SSIM, calculated within and around the missing areas between the original and the completed images. 
+				</p>
+				<p class="welcome-message text-left" style="font-size: 14pt">
+					For the <strong>OR track</strong>, we will simply use MOS, which means we will perform subjective evaluations. 
+				</p>
+				<p class="welcome-message text-left" style="font-size: 14pt">
+					To be more specific, we will have a team of about 40-50 subjects to evaluate the completed images. We will use the pairwise evaluation, i.e. each subject is given two images at once and the subject is required to select a better one from the two.
+				</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dates" style="background-color: #F5F5F5">
+    <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>Submission deadline</h2>
+                <hr>
+                <ul class="welcome-message text-left" style="font-size: 14pt">
+                    <li class="welcome-message text-left">
+                        <strong>April  8, 2019: </strong>Paper submission deadline
+                    </li>
+                    <li class="welcome-message text-left">
+                        <strong>April  8, 2019: </strong>Test image submission deadline
+                    </li>
+
+                    <li class="welcome-message text-left">
+                        <strong>April 22, 2019: </strong>Paper acceptance notification
+                    </li>
+
+                    <li class="welcome-message text-left">
+                        <strong>April 22, 2019: </strong>Evaluation results announcement
+                    </li>
+
+                    <li class="welcome-message text-left">
+                        <strong>April 29, 2019: </strong>Camera-ready paper submission deadline
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div  id="guidelines">
+    <div class="container" > <!-- Container -->
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="section-title text-center center">
+                <h2>Submission guidelines</h2>
+                <hr>
+                <div class="welcome-message text-left" style="font-size: 14pt">
+                <p>
+                	By <strong>April 8, 2019</strong>, we ask all participants to submit paper and test result (i.e. completed images).
+                </p>
+                <p>
+                	By <strong>April 9, 2019</strong>, we ask all participants to submit their (testing) code and model, which serves for verification purpose.
+                </p>
+                <p>
+                	We will provide an uploading service for participants.
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background-color: #F5F5F5">
+    <div class="container">
+        <div class="section-title text-center center">
+            <h2>
+                Coordinators
+            </h2>
+            <hr>
+        </div>
+        <div>
+        	<div class="row">
+                <div class="col-lg-3 col-lg-offset-1">
+                    <img src="img/DongLiu.jpg" width="180px" style="border-radius: 50%; border: solid #4bc9b0 thick" class="img-rounded">
+                </div>
+                <div class="col-lg-7" style="font-size: x-large">
+                    <strong>Prof. Dong Liu<br>
+                    </strong>University of Science and Technology of China<br>
+                    Email: dongeliu@ustc.edu.cn<br>
+					Homepage: <a href="http://staff.ustc.edu.cn/~dongeliu/">http://staff.ustc.edu.cn/~dongeliu/</a><br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-lg-offset-1">
+                    <img src="img/yang134.jpg" width="180px" style="border-radius: 50%; border: solid #4bc9b0 thick" class="img-rounded">
+                </div>
+                <div class="col-lg-7" style="font-size: x-large">
+                    <strong>Prof. Ming-Hsuan Yang<br>
+                    </strong>University of California at Merced<br>
+                    Email: mhyang@ucmerced.edu<br>
+					Homepage: <a href="http://faculty.ucmerced.edu/mhyang/">http://faculty.ucmerced.edu/mhyang/</a><br>
+                </div>
+            </div>
+
+        </div> 
+    </div>
+</div>
+
+
+
+<footer class="page-footer" style="background-color: rgb(34,34,34); margin: 0 !important; color: #F5F5F5">
+    <div class="container">
+        <div class="text-center fnav">
+            <p>Copyright © 2019 challenge organizing committee</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/SmoothScroll.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.js"></script>
+<script type="text/javascript" src="js/jquery.counterup.js"></script>
+<script type="text/javascript" src="js/waypoints.js"></script>
+<script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+<script type="text/javascript" src="js/contact_me.js"></script>
+<script src="js/owl.carousel.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+</body>
+</html>
